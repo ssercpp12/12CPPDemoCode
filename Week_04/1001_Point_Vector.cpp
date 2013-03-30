@@ -1,4 +1,4 @@
-// copyright (c) Jianhong Li. All rights reserved. 
+// copyright (c) Jianhong Li. All rights reserved.
 
 #include <iostream>
 using namespace std;
@@ -12,7 +12,7 @@ class Vector {
   Vector(const Vector &other);
   Vector operator+(const Vector &other);
   friend Point operator+(const Point &point, const Vector &other);
-  friend ostream& operator<<(ostream &out, Vector &vect);
+  friend ostream& operator<<(ostream &out, const Vector &vect);
  private:
   int x_;
   int y_;
@@ -24,7 +24,7 @@ class Point {
   explicit Point(int x, int y) : x_(x), y_(y) {}
   Point(const Point &other);
   friend Point operator+(const Point &point, const Vector &other);
-  friend ostream& operator<<(ostream &out, Point &point);
+  friend ostream& operator<<(ostream &out, const Point &point);
  private:
   int x_;
   int y_;
@@ -41,25 +41,19 @@ Point::Point(const Point &other) {
 }
 
 Vector Vector::operator+(const Vector &other) {
-  Vector tmp;
-  tmp.x_ = x_ + other.x_;
-  tmp.y_ = y_ + other.y_;
-  return tmp;
+  return Vector(x_ + other.x_, y_ + other.y_);
 }
 
 Point operator+(const Point &point, const Vector &other) {
-  Point tmp;
-  tmp.x_ = point.x_ + other.x_;
-  tmp.y_ = point.y_ + other.y_;
-  return tmp;
+  return Point(point.x_ + other.x_, point.y_ + other.y_);
 }
 
-ostream& operator<<(ostream &out, Vector &vect) {
+ostream& operator<<(ostream &out, const Vector &vect) {
   out << vect.x_ << ' ' << vect.y_;
   return out;
 }
 
-ostream& operator<<(ostream &out, Point &point) {
+ostream& operator<<(ostream &out, const Point &point) {
   out << point.x_ << ' ' << point.y_;
   return out;
 }
