@@ -9,6 +9,7 @@ Demo Code for 12 SSer CPP
 * [Google C++ Style Guide][2]
 * [C++ FAQ][3]
 * [5 Awesome Visual Studio Debugger Features][4]
+* [InstallingGoogleTestForLinux][5]
 
 
 [0]: http://www.cplusplus.com/
@@ -16,3 +17,4 @@ Demo Code for 12 SSer CPP
 [2]: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
 [3]: http://www.parashift.com/c++-faq/
 [4]: http://www.cprogramming.com/tutorial/visual_studio_tips.html
+[5]: https://code.google.com/p/tonatiuh/wiki/InstallingGoogleTestForLinux
